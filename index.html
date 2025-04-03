@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="favicon.png">
+	<title>p5play</title>
+	<style>
+		html, body {
+    margin: 0;
+    padding: 0;
+  }
+  canvas {
+    display: block;
+  }
+  
+  html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+  
+  @import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+  
+  body {
+    font-family: 'Amatic SC', cursive;
+    background-color: #111111;
+    color: #cccccc;
+  }
+  
+  p {
+    font-size: 3em;
+    display: table-cell; 
+    vertical-align: middle;
+    text-align: center;
+    opacity: 0;
+  
+  }
+  
+  .text{
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    position: fixed; 
+    display: table;
+  }
+  
+  .t1{
+    animation: t-animation 4s;
+    animation-delay: 1s;
+  }
+  
+  .t2{
+    animation: t-animation 4s;
+    animation-delay: 5s;
+  }
+
+  .t3{
+    animation: t-animation 4s;
+    animation-delay: 9s;
+  }
+
+  .t4{
+    animation: t-animation 4s;
+    animation-delay: 13s;
+  }
+
+  .t5{
+    animation: t-animation 4s;
+    animation-delay: 17s;
+  }
+  
+  .end{
+    animation: end-animation 9s;
+    animation-delay: 17s;
+    animation-fill-mode: forwards; 
+  }
+  
+  .glow {
+    margin: 0;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px orange, 0 0 40px orange, 0 0 50px orange, 0 0 60px orange, 0 0 30px orange;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px orange, 0 0 30px orange, 0 0 30px orange, 0 0 30px  orange, 0 0 30px orange, 0 0 30px orange;
+    }
+  }
+  
+  
+  
+  
+  @keyframes t-animation {
+    0% {opacity: 0;}
+    30% {opacity: 1;}
+    70% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+  
+  @keyframes end-animation {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  @keyframes flicker {
+    40.1% {left:0px;top:0px;}
+    40.2% {left:10px;top:8px;}
+    40.3% {left:0px;top:0px;}
+  
+    90.1% {left:0px;top:0px;}
+    90.2% {left:-5px;top:3px;}
+    90.3% {left:0px;top:0px;}
+  }
+  
+	</style>
+</head>
+
+<body>
+	<main></main>
+
+	<!-- ONLINE LINKS -->
+	<script src="https://q5js.org/q5.js"></script>
+	<script src="https://p5play.org/v3/planck.min.js"></script>
+	<script src="https://p5play.org/v3/p5play.js"></script>
+
+	<!-- OFFLINE LINKS -->
+	<!--
+	<script src="node_modules/q5/q5.js"></script>
+	<script src="node_modules/p5play/planck.min.js"></script>
+	<script src="node_modules/p5play/p5play.js"></script>
+	-->
+
+	<!-- YOUR SKETCH -->
+	<script src="sketch.js"></script>
+
+	<div class="text flicker"><p class="t1">YOU ARE LOADING</p></div>
+    <div class="text flicker"><p class="t2">STILL LOADING</p></div>
+    <div class="text flicker"><p class="t3">CALM DOWN ALMOST THERE</p></div>
+    <div class="text flicker"><p class="t4">ALRIGHT HERE WE GO</p></div>
+    <h6 class="glow"> <div class="text flicker"><p class="end" style="color: red;">DAN THE AVENGER</p></div></h6>
+    <div class="text flicker"><p class="t5">CLICK SCREEN TO CONTINUE</p></div>
+
+	
+</body>
+
+</html>
